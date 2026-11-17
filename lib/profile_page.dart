@@ -23,7 +23,7 @@ class ProfilePage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           const Text(
-            'YOUR FULL NAME',
+            'Arby Jhon E. Colina',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 24,
@@ -37,17 +37,17 @@ class ProfilePage extends StatelessWidget {
                 ListTile(
                   leading: Icon(Icons.badge),
                   title: Text('Student ID'),
-                  subtitle: Text('2026-00001'),
+                  subtitle: Text('555010'),
                 ),
                 ListTile(
                   leading: Icon(Icons.school),
-                  title: Text('Course and Section'),
-                  subtitle: Text('BSIT — YOUR SECTION'),
+                  title: Text('BSIT'),
+                  subtitle: Text('BSIT — CCE106L(3450)'),
                 ),
                 ListTile(
                   leading: Icon(Icons.email),
                   title: Text('Email'),
-                  subtitle: Text('student@example.com'),
+                  subtitle: Text('Arby@gmail.com'),
                 ),
               ],
             ),

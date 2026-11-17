@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+
  
 class SocialMediaPage extends StatelessWidget {
   const SocialMediaPage({super.key});
@@ -10,6 +12,7 @@ class SocialMediaPage extends StatelessWidget {
       ),
     );
   }
+  
  
   @override
   Widget build(BuildContext context) {
@@ -39,11 +42,11 @@ class SocialMediaPage extends StatelessWidget {
                 color: Colors.blue,
               ),
               title: const Text('Facebook'),
-              subtitle: const Text('student.sample'),
+              subtitle: const Text('Arby Jhon E. Colina'),
               trailing: const Icon(Icons.chevron_right),
               onTap: () => showAccount(
                 context,
-                'Facebook: student.sample',
+                'Facebook: Arby Jhon E. Colina',
               ),
             ),
           ),
@@ -54,11 +57,11 @@ class SocialMediaPage extends StatelessWidget {
                 color: Colors.pink,
               ),
               title: const Text('Instagram'),
-              subtitle: const Text('@student.sample'),
+              subtitle: const Text('@Colina_instagram'),
               trailing: const Icon(Icons.chevron_right),
               onTap: () => showAccount(
                 context,
-                'Instagram: @student.sample',
+                'Instagram: @Colina_instagram',
               ),
             ),
           ),
@@ -69,15 +72,16 @@ class SocialMediaPage extends StatelessWidget {
                 color: Colors.red,
               ),
               title: const Text('YouTube'),
-              subtitle: const Text('@StudentChannel'),
+              subtitle: const Text('@ColinaYT'),
               trailing: const Icon(Icons.chevron_right),
               onTap: () => showAccount(
                 context,
-                'YouTube: @StudentChannel',
+                'YouTube: @ColinaYT',
               ),
             ),
           ),
         ],
+        
       ),
     );
   }

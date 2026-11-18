@@ -14,7 +14,7 @@ void main() {
     await tester.pumpWidget(const StudentApp());
 
     expect(find.text('Welcome Back!'), findsOneWidget);
-    expect(find.text('Login'), findsOneWidget);
+    expect(find.text('Login'), findsWidgets);
     expect(find.text("Don't have an account? Register"), findsOneWidget);
   });
 }

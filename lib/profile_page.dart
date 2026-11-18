@@ -1,39 +1,46 @@
 import 'package:flutter/material.dart';
- 
+
+import 'demo_auth.dart';
+import 'login_screen.dart';
+
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
- 
+  final String username;
+
+  const ProfilePage({super.key, required this.username});
+
+  void logout(BuildContext context) {
+    DemoAuth.logout();
+
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (context) => const LoginScreen()),
+      (route) => false,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('My Profile'),
-      ),
+      appBar: AppBar(title: const Text('Student Profile')),
       body: ListView(
         padding: const EdgeInsets.all(24),
         children: [
           const CircleAvatar(
             radius: 50,
             backgroundColor: Colors.indigo,
-            child: Icon(
-              Icons.person,
-              size: 60,
-              color: Colors.white,
-            ),
+            child: Icon(Icons.person, size: 60, color: Colors.white),
           ),
           const SizedBox(height: 16),
           const Text(
             'Arby Jhon E. Colina',
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
+          const SizedBox(height: 8),
+          Text('Logged in as: $username', textAlign: TextAlign.center),
           const SizedBox(height: 24),
-          Card(
+          const Card(
             child: Column(
-              children: const [
+              children: [
                 ListTile(
                   leading: Icon(Icons.badge),
                   title: Text('Student ID'),
@@ -41,8 +48,8 @@ class ProfilePage extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Icon(Icons.school),
-                  title: Text('BSIT'),
-                  subtitle: Text('BSIT — CCE106L(3450)'),
+                  title: Text('Course and Section'),
+                  subtitle: Text('BSIT - CCE106L(3450)'),
                 ),
                 ListTile(
                   leading: Icon(Icons.email),
@@ -51,6 +58,12 @@ class ProfilePage extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          const SizedBox(height: 24),
+          ElevatedButton.icon(
+            onPressed: () => logout(context),
+            icon: const Icon(Icons.logout),
+            label: const Text('Logout'),
           ),
         ],
       ),
